@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 @import "~bootstrap/scss/bootstrap-reboot";
+@import "layout";
 
 @keyframes turn-around {
   0% {top: - .5rem; left: - .5rem;}
@@ -57,18 +58,18 @@
     }
   }
 
-  &::after {
-    content: 'bm2u.de';
-    font-weight: 400;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
-    position: absolute;
-    top: 11rem;
-    left: 50%;
-    transform: translateX(-50%);
+  // &::after {
+  //   content: 'bm2u.de';
+  //   font-weight: 400;
+  //   font-family: 'Raleway', sans-serif;
+  //   font-size: 1rem;
+  //   position: absolute;
+  //   top: 11rem;
+  //   left: 50%;
+  //   transform: translateX(-50%);
 
-    @include media-breakpoint-up(sm) {
-      top: 16rem;
-    }
-  }
+  //   @include media-breakpoint-up(sm) {
+  //     top: 16rem;
+  //   }
+  // }
 }
