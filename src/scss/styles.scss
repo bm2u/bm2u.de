@@ -1,1 +1,57 @@
 //bm2u.de styles
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+@import "~bootstrap/scss/bootstrap-reboot";
+
+@keyframes turn-around {
+  0% {top: - .5rem; left: - .5rem;}
+  25% {left: 29.5rem; top: - .5rem;}
+  50% {left: 29.5rem; top: 14.5rem;}
+  75% {left: - .5rem; top: 14.5rem;}
+  100% {top: - .5rem; left: - .5rem;}
+}
+
+.container {
+  @include size(30rem, 15rem);
+  display: table;
+  max-width: 30rem;
+  max-height: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid  #000;
+}
+
+.badge {
+  position: relative;
+  @include size(100%);
+  color: #000;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  margin: 0;
+  font-size: 2rem;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  &::before {
+    @include size(1rem);
+    @include border-radius(50%);
+    content: ' ';
+    animation: turn-around 5s ease-in-out infinite;
+    position: absolute;
+    background: #fff;
+  }
+
+  &::after {
+    content: 'bm2u.de';
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    position: absolute;
+    top: 16rem;
+    right: 0;
+  }
+}
