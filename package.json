@@ -1,0 +1,22 @@
+{
+  "name": "bm2u.de",
+  "version": "0.0.1",
+  "description": "personal website experiment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bm2u/bm2u.de.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Björn Winter <bm2u.de@gmail.com> (http://www.bm2u.de)",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/bm2u/bm2u.de/issues"
+  },
+  "homepage": "https://github.com/bm2u/bm2u.de#readme"
+}
