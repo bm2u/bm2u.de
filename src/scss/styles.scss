@@ -64,7 +64,8 @@
     font-size: 1rem;
     position: absolute;
     top: 11rem;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include media-breakpoint-up(sm) {
       top: 16rem;

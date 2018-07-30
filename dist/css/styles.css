@@ -353,7 +353,9 @@ template {
     font-size: 1rem;
     position: absolute;
     top: 11rem;
-    right: 0; }
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
     @media (min-width: 576px) {
       .badge::after {
         top: 16rem; } }
