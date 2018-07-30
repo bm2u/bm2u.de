@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist/*.{html,css,js}",
-    "copy": "cp src/html/*.html dist",
-    "start": "webpack-dev-server --content-base dist/",
+    "dev": "webpack-dev-server --content-base dist/",
     "build": "webpack",
     "postbuild": "rm -rf dist/style-bundle.js",
-    "predeploy": "npm run clean && npm run copy && npm run build",
+    "predeploy": "npm run clean && npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,6 +30,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "extract-loader": "^2.0.1",

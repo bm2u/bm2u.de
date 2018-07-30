@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer');
+const copywebpackplugin = require('copy-webpack-plugin')
 
 module.exports = [{
   mode: 'production',
@@ -34,6 +35,11 @@ module.exports = [{
       ]
     }]
   },
+  plugins: [
+    new copywebpackplugin([
+      { from: 'src/**/*.html', to: '.', flatten: true }
+    ])
+  ]
 }];
 
 // module.exports.push({
