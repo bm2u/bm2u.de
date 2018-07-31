@@ -28,20 +28,51 @@ html, body {
 
   &-content {
     @include make-col-ready();
-
   }
 }
-  
+
 .footer {
   @include make-row();
+  position: relative;
   background: #000;
   color: #fff;
   flex: 0 0 30%;
   font-family: 'Raleway', sans-serif;
 
+  &-svg {
+    flex: 0 1 100%;
+    display: table;
+
+    svg {
+      position: absolute;
+      top: -1px;
+      transform: rotate(180deg);
+      width: 100%;
+      height: 100px;
+    }
+    
+    .svg--sm {
+    
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    
+    }
+    
+    .svg--lg {
+    
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+
+  }
+
   &-content {
     @include make-col-ready();
-    margin: auto auto;
+    position: absolute;
+    bottom: 2rem;
+    vertical-align: bottom;
     text-align: center;
     font-size: 1rem;
   }

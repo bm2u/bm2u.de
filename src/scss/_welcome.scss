@@ -7,31 +7,25 @@
 }
 
 .container {
-  display: table;
-  padding: 1em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  position: relative;
+  margin: auto auto;
+  margin-top: 10rem;
+  text-align: center;
 
   @include media-breakpoint-up(sm) {
     @include size(30rem, 15rem);
     border: 2px solid #000;
-    padding: 0;
   }
 }
 
 .badge {
-  @include size(100%);
-  position: relative;
   color: #000;
   font-family: 'Permanent Marker', cursive;
   font-weight: 400;
-  margin: 0;
   font-size: 1rem;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  width: 100%;
+  padding-top: 3rem;
+  margin: 0;
 
   @include media-breakpoint-up(sm) {
     font-size: 2rem;
@@ -50,19 +44,4 @@
       display: block;
     }
   }
-
-  // &::after {
-  //   content: 'bm2u.de';
-  //   font-weight: 400;
-  //   font-family: 'Raleway', sans-serif;
-  //   font-size: 1rem;
-  //   position: absolute;
-  //   top: 11rem;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-
-  //   @include media-breakpoint-up(sm) {
-  //     top: 16rem;
-  //   }
-  // }
 }
