@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist/*.{html,css,js}",
-    "dev": "webpack-dev-server --content-base dist/",
+    "dev": "webpack-dev-server",
     "build": "webpack",
     "postbuild": "rm -rf dist/style-bundle.js",
     "predeploy": "npm run clean && npm run build",
@@ -30,6 +30,8 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.6",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "del": "^3.0.0",

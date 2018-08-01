@@ -1,5 +1,7 @@
 const autoprefixer = require('autoprefixer');
-const copywebpackplugin = require('copy-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const path = require('path');
+const copywebpackplugin = require('copy-webpack-plugin');
 
 module.exports = [{
   mode: 'production',
@@ -8,6 +10,11 @@ module.exports = [{
     // This is necessary for webpack to compile
     // But we never use style-bundle.js
     filename: 'style-bundle.js',
+  },
+  devServer: {
+    port: 3100,
+    hot: false,
+    contentBase: path.join(__dirname, 'dist')
   },
   module: {
     rules: [{
@@ -38,7 +45,22 @@ module.exports = [{
   plugins: [
     new copywebpackplugin([
       { from: 'src/**/*.html', to: '.', flatten: true }
-    ])
+    ]),
+    new BrowserSyncPlugin({
+        // browse to http://localhost:3000/ during development
+        host: 'localhost',
+        port: 3000,
+        // proxy the Webpack Dev Server endpoint
+        // (which should be serving on http://localhost:3100/)
+        // through BrowserSync
+        proxy: 'http://localhost:3100/'
+      },
+      // plugin options
+      {
+        // prevent BrowserSync from reloading the page
+        // and let Webpack Dev Server take care of this
+        reload: true
+      })
   ]
 }];
 
