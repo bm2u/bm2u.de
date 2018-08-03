@@ -52,6 +52,8 @@ module.exports = [{
         // BrowserSync options
         host: 'localhost',
         port: 3000,
+        notify: false,
+        open: false,
         proxy: 'http://localhost:3100/'
       },
       // plugin options
