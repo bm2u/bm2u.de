@@ -223,7 +223,7 @@ body {
 * {
   outline: none; }
 
-.inital-white {
+.initial-white {
   -webkit-animation-name: slideOutLeft;
           animation-name: slideOutLeft;
   -webkit-animation-duration: 1s;
@@ -234,7 +234,6 @@ body {
           animation-delay: .01s;
   background: #fff;
   position: fixed;
-  pointer-events: none;
   top: 0;
   bottom: 0;
   right: 0;
@@ -259,7 +258,7 @@ body {
     visibility: hidden;
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
-  .inital-white.hidden {
+  .initial-white.hidden {
     display: none; }
 
 .move-overlay {
@@ -284,7 +283,7 @@ body {
   overflow: hidden;
   position: relative; }
   .page .countdown {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -293,11 +292,36 @@ body {
     pointer-events: none; }
     .page .countdown .number {
       opacity: .75;
+      visibility: hidden;
+      pointer-events: none;
       color: #fff;
       font-weight: 700;
       font-size: 20em;
-      pointer-events: none;
       text-align: center; }
+      .page .countdown .number--visible {
+        -webkit-animation-name: zoomIn;
+                animation-name: zoomIn;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        visibility: visible; }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
 
 .main {
   flex: 1 0 100%;
@@ -305,7 +329,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column; }
-  .main.hidden {
+  .main--hidden {
     -webkit-animation-name: slideOutLeft;
             animation-name: slideOutLeft;
     -webkit-animation-duration: 1s;
@@ -318,7 +342,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0; }
-  .main.visible {
+  .main--visible {
     -webkit-animation-name: slideInRight;
             animation-name: slideInRight;
     -webkit-animation-duration: 1s;
@@ -344,6 +368,32 @@ body {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
+
+.title {
+  font-size: 4em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase; }
+  .prompt .title {
+    margin: .125em 0;
+    width: 100%; }
+
+.copy {
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+  color: #000; }
+
+.prompt {
+  flex: none;
+  min-height: 828px; }
+  .prompt .visual {
+    margin: 6em 0 4em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .prompt .visual .link {
+      font-size: 2em; }
 
 .images,
 .answers {
@@ -474,45 +524,20 @@ body {
       background: #fff;
       color: #000; }
 
-.prompt {
-  flex: none;
-  min-height: 828px; }
-  .prompt .visual {
-    margin: 6em 0 4em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .prompt .visual .link {
-      font-size: 2em; }
-
-.title {
-  font-size: 4em;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase; }
-  .prompt .title {
-    margin: .125em 0;
-    width: 100%; }
-
-.copy {
-  font-size: 3em;
-  font-weight: 500;
-  text-align: center;
-  color: #000; }
-
-.competition {
+.lottery {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: fixed;
   pointer-events: none;
-  z-index: 10;
+  z-index: 5;
   opacity: 0;
-  top: 65%;
+  top: 20%;
   right: 20%;
   border-radius: 50%;
   background: #e3004a;
   height: 300px;
   width: 300px;
   padding: 20px; }
-  .competition--fadeIn {
+  .lottery--fadeIn {
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
     -webkit-animation-duration: 1s;
@@ -533,7 +558,7 @@ body {
     opacity: 0; }
   to {
     opacity: 1; } }
-  .competition--move {
+  .lottery--move {
     -webkit-animation-name: rubberBand;
             animation-name: rubberBand;
     -webkit-animation-duration: 1s;
@@ -587,7 +612,7 @@ body {
   to {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
-  .competition--fadeOut {
+  .lottery--fadeOut {
     -webkit-animation-name: fadeOut;
             animation-name: fadeOut;
     -webkit-animation-duration: 1s;
@@ -606,13 +631,13 @@ body {
     opacity: 1; }
   to {
     opacity: 0; } }
-  .competition-inner {
+  .lottery-inner {
     position: relative;
     width: 100%;
     height: 100%;
     background: #c40040;
     border-radius: 50%; }
-  .competition-text {
+  .lottery-text {
     font-size: 2.5em;
     font-weight: 700;
     color: #fff;
