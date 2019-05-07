@@ -289,12 +289,14 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    z-index: 4; }
+    z-index: 4;
+    pointer-events: none; }
     .page .countdown .number {
       opacity: .75;
       color: #fff;
       font-weight: 700;
       font-size: 20em;
+      pointer-events: none;
       text-align: center; }
 
 .main {
@@ -501,6 +503,7 @@ body {
 .competition {
   position: fixed;
   pointer-events: none;
+  z-index: 10;
   opacity: 0;
   top: 65%;
   right: 20%;
